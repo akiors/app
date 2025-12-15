@@ -1,0 +1,162 @@
+[gd_scene load_steps=15 format=3 uid="uid://b5ag7ch1gjqil"]
+
+[ext_resource type="Texture2D" uid="uid://dwc7qwf84clxu" path="res://image/user_ico.png" id="1_0laim"]
+[ext_resource type="Script" uid="uid://cy25w7b3tgd20" path="res://code/meue.gd" id="1_08ros"]
+[ext_resource type="Texture2D" uid="uid://cph8h0apgkpsr" path="res://image/ui_meue.jpg" id="2_twq3r"]
+[ext_resource type="PackedScene" uid="uid://c22bgkef7oo7s" path="res://tscn/creat_user.tscn" id="2_yhd38"]
+[ext_resource type="PackedScene" uid="uid://bxrp24jdpalhl" path="res://tscn/load_user.tscn" id="3_mqv8f"]
+[ext_resource type="PackedScene" uid="uid://cs8apk7kdyg5c" path="res://tscn/text.tscn" id="4_lfwg5"]
+[ext_resource type="PackedScene" uid="uid://01rlhrr8uydf" path="res://tscn/add_money.tscn" id="5_28k0p"]
+[ext_resource type="PackedScene" uid="uid://bwnh7j28y76i5" path="res://tscn/manager.tscn" id="6_3gxxt"]
+[ext_resource type="PackedScene" uid="uid://bjg7keymntedd" path="res://tscn/buffet.tscn" id="7_34iga"]
+[ext_resource type="FontFile" uid="uid://cr43j40lok3wo" path="res://font/ZiHunLongTengKaiShu(ShangYongXuShouQuan)-2.ttf" id="7_lfwg5"]
+[ext_resource type="Texture2D" uid="uid://d4i2dl2pskw2s" path="res://image/moneybag.png" id="11_vcetj"]
+[ext_resource type="Texture2D" uid="uid://na1vy4vo21s0" path="res://image/Zen_MoneySign.png" id="12_ptuin"]
+[ext_resource type="Texture2D" uid="uid://do3yfyuq0ovxi" path="res://image/Almanac.png" id="13_jpfki"]
+[ext_resource type="Texture2D" uid="uid://dk3oxxvnwekne" path="res://image/lock.png" id="14_d1i15"]
+
+[node name="meue" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_08ros")
+creat_user = ExtResource("2_yhd38")
+load_user = ExtResource("3_mqv8f")
+menu_text = ExtResource("4_lfwg5")
+addmoney = ExtResource("5_28k0p")
+manager = ExtResource("6_3gxxt")
+budget = ExtResource("7_34iga")
+
+[node name="background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 800.0
+offset_bottom = 600.0
+texture = ExtResource("2_twq3r")
+expand_mode = 1
+
+[node name="creat_user" type="Button" parent="."]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 10.0
+offset_right = 104.0
+offset_bottom = 47.0
+text = "注册"
+icon = ExtResource("1_0laim")
+
+[node name="load_user" type="Button" parent="."]
+layout_mode = 0
+offset_left = 122.0
+offset_top = 13.0
+offset_right = 162.0
+offset_bottom = 44.0
+text = "登入"
+
+[node name="unload" type="Label" parent="."]
+layout_mode = 0
+offset_left = 236.0
+offset_top = 10.0
+offset_right = 508.0
+offset_bottom = 33.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "你当前还未登入，如果没有账号请注册"
+
+[node name="user_name" type="Label" parent="."]
+layout_mode = 0
+offset_left = 643.0
+offset_top = 10.0
+offset_right = 691.0
+offset_bottom = 33.0
+text = "账户："
+
+[node name="data" type="Label" parent="user_name"]
+layout_mode = 0
+offset_left = 48.0
+offset_right = 151.0
+offset_bottom = 23.0
+
+[node name="but1" type="Button" parent="."]
+layout_mode = 0
+offset_left = 77.0
+offset_top = 129.0
+offset_right = 384.0
+offset_bottom = 306.0
+theme_override_fonts/font = ExtResource("7_lfwg5")
+theme_override_font_sizes/font_size = 51
+text = "记账管理"
+icon = ExtResource("11_vcetj")
+
+[node name="but2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 74.0
+offset_top = 324.0
+offset_right = 387.0
+offset_bottom = 501.0
+theme_override_fonts/font = ExtResource("7_lfwg5")
+theme_override_font_sizes/font_size = 51
+text = "预算管理"
+icon = ExtResource("12_ptuin")
+
+[node name="but3" type="Button" parent="."]
+layout_mode = 0
+offset_left = 418.0
+offset_top = 134.0
+offset_right = 680.0
+offset_bottom = 311.0
+theme_override_fonts/font = ExtResource("7_lfwg5")
+theme_override_font_sizes/font_size = 51
+text = "统计查询"
+icon = ExtResource("13_jpfki")
+
+[node name="but4" type="Button" parent="."]
+layout_mode = 0
+offset_left = 414.0
+offset_top = 329.0
+offset_right = 676.0
+offset_bottom = 506.0
+theme_override_fonts/font = ExtResource("7_lfwg5")
+theme_override_font_sizes/font_size = 51
+text = "用户注销"
+icon = ExtResource("14_d1i15")
+
+[node name="quit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 174.0
+offset_top = 13.0
+offset_right = 214.0
+offset_bottom = 44.0
+text = "退出"
+
+[node name="change_password" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 54.0
+offset_right = 155.0
+offset_bottom = 88.0
+
+[node name="change" type="Button" parent="."]
+layout_mode = 0
+offset_left = 162.0
+offset_top = 55.0
+offset_right = 234.0
+offset_bottom = 86.0
+text = "修改密码"
+
+[node name="admin_text" type="Label" parent="."]
+layout_mode = 0
+offset_left = 583.0
+offset_top = 9.0
+offset_right = 642.0
+offset_bottom = 32.0
+text = "[管理员]"
+
+[connection signal="pressed" from="creat_user" to="." method="_on_creat_user_pressed"]
+[connection signal="pressed" from="load_user" to="." method="_on_load_user_pressed"]
+[connection signal="pressed" from="but1" to="." method="_on_but_1_pressed"]
+[connection signal="pressed" from="but2" to="." method="_on_but_2_pressed"]
+[connection signal="pressed" from="but3" to="." method="_on_but_3_pressed"]
+[connection signal="pressed" from="but4" to="." method="_on_but_4_pressed"]
+[connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="change" to="." method="_on_button_pressed"]

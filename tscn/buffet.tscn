@@ -1,0 +1,172 @@
+[gd_scene load_steps=5 format=3 uid="uid://bjg7keymntedd"]
+
+[ext_resource type="Script" uid="uid://cskiap2t7kjjl" path="res://code/buffet.gd" id="1_hubeo"]
+[ext_resource type="Texture2D" uid="uid://jtdhqyxtxupx" path="res://image/ui_budget.jpg" id="1_i4mtw"]
+[ext_resource type="FontFile" uid="uid://cr43j40lok3wo" path="res://font/ZiHunLongTengKaiShu(ShangYongXuShouQuan)-2.ttf" id="2_bssmd"]
+[ext_resource type="PackedScene" uid="uid://b3hjtwqxf4jh2" path="res://tscn/come_back.tscn" id="4_hubeo"]
+
+[node name="buffet" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hubeo")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 800.0
+offset_bottom = 600.0
+texture = ExtResource("1_i4mtw")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = -4.0
+offset_right = 126.0
+offset_bottom = 34.0
+theme_override_colors/font_color = Color(0, 0.106666565, 0.8, 1)
+theme_override_fonts/font = ExtResource("2_bssmd")
+theme_override_font_sizes/font_size = 31
+text = "预算管理"
+
+[node name="come_back" parent="." instance=ExtResource("4_hubeo")]
+layout_mode = 0
+offset_left = 137.0
+offset_top = 6.0
+offset_right = 301.0
+offset_bottom = 32.0
+
+[node name="Label2" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 15.0
+offset_top = 41.0
+offset_right = 141.0
+offset_bottom = 71.0
+theme_override_font_sizes/font_size = 21
+text = "设置你的预算"
+
+[node name="TextEdit" type="TextEdit" parent="Label2"]
+layout_mode = 0
+offset_left = 133.0
+offset_right = 243.0
+offset_bottom = 32.0
+
+[node name="Button" type="Button" parent="Label2"]
+layout_mode = 0
+offset_left = 248.0
+offset_right = 298.0
+offset_bottom = 31.0
+text = "设置"
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 40.0
+offset_right = 103.0
+offset_bottom = 70.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 21
+text = "你的预算:"
+
+[node name="Label" type="Label" parent="Label3"]
+layout_mode = 0
+offset_left = 95.0
+offset_top = -3.0
+offset_right = 135.0
+offset_bottom = 27.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 21
+
+[node name="delete" type="Button" parent="Label3"]
+layout_mode = 0
+offset_left = -6.0
+offset_top = 65.0
+offset_right = 98.0
+offset_bottom = 96.0
+text = "重新设置预算"
+
+[node name="Label2" type="Label" parent="Label3"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 33.0
+offset_right = 83.0
+offset_bottom = 63.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 21
+text = "剩余预算:"
+
+[node name="Label3" type="Label" parent="Label3"]
+layout_mode = 0
+offset_left = 91.0
+offset_top = 33.0
+offset_right = 131.0
+offset_bottom = 63.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 21
+
+[node name="ItemList" type="ItemList" parent="."]
+layout_mode = 0
+offset_left = 326.0
+offset_top = 43.0
+offset_right = 791.0
+offset_bottom = 286.0
+max_columns = 4
+same_column_width = true
+
+[node name="ItemList2" type="ItemList" parent="."]
+layout_mode = 0
+offset_left = 223.0
+offset_top = 311.0
+offset_right = 688.0
+offset_bottom = 554.0
+max_columns = 4
+same_column_width = true
+fixed_column_width = 100
+
+[node name="Label4" type="Label" parent="."]
+layout_mode = 0
+offset_left = 295.0
+offset_top = 91.0
+offset_right = 317.0
+offset_bottom = 224.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_bssmd")
+theme_override_font_sizes/font_size = 22
+text = "收
+入
+来
+源"
+
+[node name="Label5" type="Label" parent="."]
+layout_mode = 0
+offset_left = 186.0
+offset_top = 366.0
+offset_right = 208.0
+offset_bottom = 499.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_bssmd")
+theme_override_font_sizes/font_size = 22
+text = "支
+出
+来
+源"
+
+[node name="Label6" type="Label" parent="."]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 537.0
+offset_right = 350.0
+offset_bottom = 592.0
+theme_override_colors/font_color = Color(0.25, 0.37499988, 1, 1)
+theme_override_font_sizes/font_size = 18
+text = "注:双击或回车可勾选，
+勾选后可通过此来源控制预算的收入与支出"
+
+[connection signal="pressed" from="Label2/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Label3/delete" to="." method="_on_delete_pressed"]
+[connection signal="item_activated" from="ItemList" to="." method="_on_item_list_item_activated"]
+[connection signal="item_activated" from="ItemList2" to="." method="_on_item_list_2_item_activated"]

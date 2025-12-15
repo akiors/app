@@ -1,0 +1,502 @@
+[gd_scene load_steps=6 format=3 uid="uid://01rlhrr8uydf"]
+
+[ext_resource type="Script" uid="uid://bu156rmebu4is" path="res://code/add_money.gd" id="1_8g8ob"]
+[ext_resource type="Texture2D" uid="uid://b6x023y3o40pq" path="res://image/ui_add_money.webp" id="1_bm8sq"]
+[ext_resource type="FontFile" uid="uid://cr43j40lok3wo" path="res://font/ZiHunLongTengKaiShu(ShangYongXuShouQuan)-2.ttf" id="2_ek0fq"]
+[ext_resource type="PackedScene" uid="uid://b3hjtwqxf4jh2" path="res://tscn/come_back.tscn" id="2_u1avr"]
+[ext_resource type="PackedScene" uid="uid://cs8apk7kdyg5c" path="res://tscn/text.tscn" id="3_u1avr"]
+
+[node name="add_money" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8g8ob")
+come_back = ExtResource("2_u1avr")
+text = ExtResource("3_u1avr")
+
+[node name="background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 800.0
+offset_bottom = 600.0
+texture = ExtResource("1_bm8sq")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = -4.0
+offset_right = 126.0
+offset_bottom = 34.0
+theme_override_colors/font_color = Color(0.27, 0.75, 0.678, 1)
+theme_override_fonts/font = ExtResource("2_ek0fq")
+theme_override_font_sizes/font_size = 31
+text = "记账管理"
+
+[node name="income" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 36.0
+offset_right = 797.0
+offset_bottom = 80.0
+color = Color(0, 0, 0, 0.34901962)
+
+[node name="income" type="Label" parent="income"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 1.0
+offset_right = 66.0
+offset_bottom = 39.0
+theme_override_colors/font_color = Color(0.9261847, 0.6556856, 3.465414e-06, 1)
+theme_override_fonts/font = ExtResource("2_ek0fq")
+theme_override_font_sizes/font_size = 31
+text = "收入"
+
+[node name="income_categoity" type="OptionButton" parent="income"]
+layout_mode = 0
+offset_left = 137.0
+offset_top = 5.0
+offset_right = 233.0
+offset_bottom = 36.0
+
+[node name="cate" type="Label" parent="income"]
+layout_mode = 0
+offset_left = 73.0
+offset_top = 4.0
+offset_right = 136.0
+offset_bottom = 40.0
+theme_override_font_sizes/font_size = 21
+text = "类型："
+
+[node name="time" type="Label" parent="income"]
+layout_mode = 0
+offset_left = 238.0
+offset_top = 4.0
+offset_right = 301.0
+offset_bottom = 34.0
+theme_override_font_sizes/font_size = 21
+text = "时间："
+
+[node name="TextEdit" type="TextEdit" parent="income"]
+layout_mode = 0
+offset_left = 298.0
+offset_top = 9.0
+offset_right = 343.0
+offset_bottom = 36.0
+
+[node name="year" type="Label" parent="income"]
+layout_mode = 0
+offset_left = 346.0
+offset_top = 5.0
+offset_right = 386.0
+offset_bottom = 35.0
+theme_override_font_sizes/font_size = 21
+text = "年"
+
+[node name="TextEdit2" type="TextEdit" parent="income"]
+layout_mode = 0
+offset_left = 368.0
+offset_top = 8.0
+offset_right = 396.0
+offset_bottom = 38.0
+
+[node name="month" type="Label" parent="income"]
+layout_mode = 0
+offset_left = 395.0
+offset_top = 7.0
+offset_right = 437.0
+offset_bottom = 37.0
+theme_override_font_sizes/font_size = 21
+text = "月"
+
+[node name="TextEdit3" type="TextEdit" parent="income"]
+layout_mode = 0
+offset_left = 418.0
+offset_top = 7.0
+offset_right = 446.0
+offset_bottom = 37.0
+
+[node name="data" type="Label" parent="income"]
+layout_mode = 0
+offset_left = 446.0
+offset_top = 7.0
+offset_right = 488.0
+offset_bottom = 37.0
+theme_override_font_sizes/font_size = 21
+text = "日"
+
+[node name="money" type="Label" parent="income"]
+layout_mode = 0
+offset_left = 581.0
+offset_top = 5.0
+offset_right = 629.0
+offset_bottom = 35.0
+theme_override_font_sizes/font_size = 21
+text = "金额:"
+
+[node name="TextEdit4" type="TextEdit" parent="income"]
+layout_mode = 0
+offset_left = 631.0
+offset_top = 6.0
+offset_right = 765.0
+offset_bottom = 35.0
+
+[node name="money2" type="Label" parent="income"]
+layout_mode = 0
+offset_left = 765.0
+offset_top = 4.0
+offset_right = 786.0
+offset_bottom = 34.0
+theme_override_font_sizes/font_size = 21
+text = "元"
+
+[node name="TextEdit5" type="TextEdit" parent="income"]
+layout_mode = 0
+offset_left = 523.0
+offset_top = 6.0
+offset_right = 551.0
+offset_bottom = 36.0
+
+[node name="TextEdit6" type="TextEdit" parent="income"]
+layout_mode = 0
+offset_left = 472.0
+offset_top = 6.0
+offset_right = 500.0
+offset_bottom = 36.0
+
+[node name="hour" type="Label" parent="income"]
+layout_mode = 0
+offset_left = 501.0
+offset_top = 5.0
+offset_right = 523.0
+offset_bottom = 35.0
+theme_override_font_sizes/font_size = 21
+text = "时"
+
+[node name="min" type="Label" parent="income"]
+layout_mode = 0
+offset_left = 554.0
+offset_top = 7.0
+offset_right = 596.0
+offset_bottom = 37.0
+theme_override_font_sizes/font_size = 21
+text = "分"
+
+[node name="outcome" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 85.0
+offset_right = 796.0
+offset_bottom = 129.0
+color = Color(0, 0, 0, 0.34901962)
+
+[node name="outcome" type="Label" parent="outcome"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = -2.0
+offset_right = 68.0
+offset_bottom = 36.0
+theme_override_colors/font_color = Color(0.123999886, 0.93, 0, 1)
+theme_override_fonts/font = ExtResource("2_ek0fq")
+theme_override_font_sizes/font_size = 31
+text = "支出"
+
+[node name="income_categoity" type="OptionButton" parent="outcome"]
+layout_mode = 0
+offset_left = 137.0
+offset_top = 6.0
+offset_right = 233.0
+offset_bottom = 37.0
+
+[node name="cate" type="Label" parent="outcome"]
+layout_mode = 0
+offset_left = 75.0
+offset_top = 5.0
+offset_right = 138.0
+offset_bottom = 41.0
+theme_override_font_sizes/font_size = 21
+text = "类型："
+
+[node name="time" type="Label" parent="outcome"]
+layout_mode = 0
+offset_left = 239.0
+offset_top = 5.0
+offset_right = 302.0
+offset_bottom = 35.0
+theme_override_font_sizes/font_size = 21
+text = "时间："
+
+[node name="TextEdit" type="TextEdit" parent="outcome"]
+layout_mode = 0
+offset_left = 298.0
+offset_top = 10.0
+offset_right = 343.0
+offset_bottom = 37.0
+
+[node name="year" type="Label" parent="outcome"]
+layout_mode = 0
+offset_left = 347.0
+offset_top = 7.0
+offset_right = 387.0
+offset_bottom = 37.0
+theme_override_font_sizes/font_size = 21
+text = "年"
+
+[node name="TextEdit2" type="TextEdit" parent="outcome"]
+layout_mode = 0
+offset_left = 369.0
+offset_top = 7.0
+offset_right = 397.0
+offset_bottom = 37.0
+
+[node name="month" type="Label" parent="outcome"]
+layout_mode = 0
+offset_left = 397.0
+offset_top = 5.0
+offset_right = 437.0
+offset_bottom = 35.0
+theme_override_font_sizes/font_size = 21
+text = "月"
+
+[node name="TextEdit3" type="TextEdit" parent="outcome"]
+layout_mode = 0
+offset_left = 419.0
+offset_top = 7.0
+offset_right = 447.0
+offset_bottom = 37.0
+
+[node name="data" type="Label" parent="outcome"]
+layout_mode = 0
+offset_left = 447.0
+offset_top = 5.0
+offset_right = 468.0
+offset_bottom = 35.0
+theme_override_font_sizes/font_size = 21
+text = "日"
+
+[node name="money" type="Label" parent="outcome"]
+layout_mode = 0
+offset_left = 584.0
+offset_top = 3.0
+offset_right = 632.0
+offset_bottom = 33.0
+theme_override_font_sizes/font_size = 21
+text = "金额:"
+
+[node name="TextEdit4" type="TextEdit" parent="outcome"]
+layout_mode = 0
+offset_left = 632.0
+offset_top = 4.0
+offset_right = 766.0
+offset_bottom = 33.0
+
+[node name="money2" type="Label" parent="outcome"]
+layout_mode = 0
+offset_left = 766.0
+offset_right = 787.0
+offset_bottom = 30.0
+theme_override_font_sizes/font_size = 21
+text = "元"
+
+[node name="TextEdit5" type="TextEdit" parent="outcome"]
+layout_mode = 0
+offset_left = 523.0
+offset_top = 6.0
+offset_right = 551.0
+offset_bottom = 36.0
+
+[node name="TextEdit6" type="TextEdit" parent="outcome"]
+layout_mode = 0
+offset_left = 472.0
+offset_top = 6.0
+offset_right = 500.0
+offset_bottom = 36.0
+
+[node name="hour" type="Label" parent="outcome"]
+layout_mode = 0
+offset_left = 501.0
+offset_top = 5.0
+offset_right = 523.0
+offset_bottom = 35.0
+theme_override_font_sizes/font_size = 21
+text = "时"
+
+[node name="min" type="Label" parent="outcome"]
+layout_mode = 0
+offset_left = 554.0
+offset_top = 7.0
+offset_right = 596.0
+offset_bottom = 37.0
+theme_override_font_sizes/font_size = 21
+text = "分"
+
+[node name="TabBar" type="TabBar" parent="."]
+layout_mode = 0
+offset_left = 95.0
+offset_top = 130.0
+offset_right = 199.0
+offset_bottom = 168.0
+current_tab = 0
+tab_count = 2
+tab_0/title = "收入"
+tab_1/title = "支出"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 135.0
+offset_right = 135.0
+offset_bottom = 173.0
+theme_override_colors/font_color = Color(0.27, 0.31800008, 0.75, 1)
+theme_override_fonts/font = ExtResource("2_ek0fq")
+theme_override_font_sizes/font_size = 20
+text = "保存类型"
+
+[node name="TextEdit" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 262.0
+offset_top = 136.0
+offset_right = 710.0
+offset_bottom = 165.0
+
+[node name="cate" type="Label" parent="."]
+layout_mode = 0
+offset_left = 204.0
+offset_top = 133.0
+offset_right = 282.0
+offset_bottom = 169.0
+theme_override_colors/font_color = Color(0, 0, 0, 0.7921569)
+theme_override_font_sizes/font_size = 21
+text = "备注："
+
+[node name="save" type="Button" parent="."]
+layout_mode = 0
+offset_left = 730.0
+offset_top = 134.0
+offset_right = 778.0
+offset_bottom = 165.0
+text = "保存"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0.5254902)
+layout_mode = 0
+offset_left = 5.0
+offset_top = 183.0
+offset_right = 790.0
+offset_bottom = 570.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label4" type="Label" parent="."]
+layout_mode = 0
+offset_left = 108.0
+offset_top = 232.0
+offset_right = 140.0
+offset_bottom = 255.0
+text = "类型"
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 231.0
+offset_right = 92.0
+offset_bottom = 254.0
+text = "收入/支出"
+
+[node name="Label5" type="Label" parent="."]
+layout_mode = 0
+offset_left = 222.0
+offset_top = 234.0
+offset_right = 254.0
+offset_bottom = 257.0
+text = "时间"
+
+[node name="Label6" type="Label" parent="."]
+layout_mode = 0
+offset_left = 352.0
+offset_top = 234.0
+offset_right = 392.0
+offset_bottom = 257.0
+text = "金额"
+
+[node name="Label7" type="Label" parent="."]
+layout_mode = 0
+offset_left = 555.0
+offset_top = 234.0
+offset_right = 587.0
+offset_bottom = 257.0
+text = "备注"
+
+[node name="ItemList" type="ItemList" parent="."]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 264.0
+offset_right = 766.0
+offset_bottom = 525.0
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 405.0
+offset_top = 528.0
+offset_right = 466.0
+offset_bottom = 559.0
+text = "删除"
+
+[node name="Label8" type="Label" parent="."]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 196.0
+offset_right = 96.0
+offset_bottom = 219.0
+text = "筛选类型"
+
+[node name="cmp" type="OptionButton" parent="."]
+layout_mode = 0
+offset_left = 101.0
+offset_top = 194.0
+offset_right = 197.0
+offset_bottom = 225.0
+
+[node name="choose_money" type="Label" parent="."]
+layout_mode = 0
+offset_left = 391.0
+offset_top = 195.0
+offset_right = 455.0
+offset_bottom = 218.0
+text = "筛选金额"
+
+[node name="left" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 471.0
+offset_top = 193.0
+offset_right = 574.0
+offset_bottom = 222.0
+
+[node name="right" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 617.0
+offset_top = 193.0
+offset_right = 726.0
+offset_bottom = 222.0
+
+[node name="null" type="Label" parent="."]
+layout_mode = 0
+offset_left = 579.0
+offset_top = 194.0
+offset_right = 619.0
+offset_bottom = 217.0
+text = "——"
+
+[node name="choose" type="Button" parent="."]
+layout_mode = 0
+offset_left = 315.0
+offset_top = 528.0
+offset_right = 373.0
+offset_bottom = 559.0
+text = "筛选"
+
+[connection signal="pressed" from="save" to="." method="_on_save_pressed"]
+[connection signal="item_selected" from="ItemList" to="." method="_on_item_list_item_selected"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="choose" to="." method="_on_button_2_pressed"]

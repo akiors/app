@@ -1,0 +1,124 @@
+[gd_scene load_steps=5 format=3 uid="uid://c22bgkef7oo7s"]
+
+[ext_resource type="Texture2D" uid="uid://dka54d0wwmdgf" path="res://image/ui_creat_user.jpg" id="1_fvfhh"]
+[ext_resource type="Script" uid="uid://bbowk371bqiyx" path="res://code/creat_user.gd" id="1_nqaxd"]
+[ext_resource type="PackedScene" uid="uid://cs8apk7kdyg5c" path="res://tscn/text.tscn" id="3_oiegd"]
+[ext_resource type="PackedScene" uid="uid://b3hjtwqxf4jh2" path="res://tscn/come_back.tscn" id="5_7uk3v"]
+
+[node name="creat_user" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nqaxd")
+come_back = ExtResource("5_7uk3v")
+text = ExtResource("3_oiegd")
+
+[node name="background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 800.0
+offset_bottom = 600.0
+texture = ExtResource("1_fvfhh")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0.48235294)
+layout_mode = 0
+offset_left = 240.0
+offset_top = 163.0
+offset_right = 527.0
+offset_bottom = 461.0
+color = Color(0, 0, 0, 1)
+
+[node name="warning" type="Label" parent="."]
+layout_mode = 0
+offset_left = 264.0
+offset_top = 184.0
+offset_right = 504.0
+offset_bottom = 207.0
+text = "请注册一个账号，并记住你的密码"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 265.0
+offset_top = 246.0
+offset_right = 305.0
+offset_bottom = 269.0
+text = "账号："
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 263.0
+offset_top = 283.0
+offset_right = 311.0
+offset_bottom = 306.0
+text = "密码："
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 261.0
+offset_top = 324.0
+offset_right = 309.0
+offset_bottom = 347.0
+text = "请再输入一次密码："
+
+[node name="user_name" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 315.0
+offset_top = 240.0
+offset_right = 506.0
+offset_bottom = 275.0
+
+[node name="user_password" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 315.0
+offset_top = 282.0
+offset_right = 506.0
+offset_bottom = 317.0
+
+[node name="user_password_again" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 261.0
+offset_top = 351.0
+offset_right = 452.0
+offset_bottom = 386.0
+
+[node name="creat" type="Button" parent="."]
+layout_mode = 0
+offset_left = 334.0
+offset_top = 397.0
+offset_right = 412.0
+offset_bottom = 428.0
+text = "注册"
+
+[node name="creat_sucess" type="Label" parent="."]
+layout_mode = 0
+offset_left = 340.0
+offset_top = 429.0
+offset_right = 420.0
+offset_bottom = 452.0
+theme_override_colors/font_color = Color(0, 0.95686275, 0, 1)
+text = "注册成功！"
+horizontal_alignment = 1
+justification_flags = 162
+
+[node name="warning2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 214.0
+offset_top = 467.0
+offset_right = 580.0
+offset_bottom = 495.0
+theme_override_font_sizes/font_size = 20
+text = "注:开启管理员后你可以随意修改你的密码"
+
+[node name="isadmin" type="CheckBox" parent="."]
+layout_mode = 0
+offset_left = 417.0
+offset_top = 397.0
+offset_right = 493.0
+offset_bottom = 428.0
+text = "管理员"
+
+[connection signal="pressed" from="creat" to="." method="_on_creat_pressed"]
+[connection signal="pressed" from="isadmin" to="." method="_on_check_box_pressed"]

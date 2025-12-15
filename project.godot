@@ -1,0 +1,30 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="记账程序"
+run/main_scene="res://tscn/meue.tscn"
+config/features=PackedStringArray("4.5", "GL Compatibility")
+run/stretch/aspect="keep"
+run/stretch/mode="disabled"
+
+[autoload]
+
+Statemanger="*res://tscn/statemanger.tscn"
+
+[display]
+
+window/size/viewport_width=800
+window/size/viewport_height=600
+
+[rendering]
+
+renderer/rendering_method="mobile"

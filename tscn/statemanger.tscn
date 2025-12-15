@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://gk12v13dwr5k"]
+
+[ext_resource type="Script" uid="uid://o6g8avkgvcs8" path="res://code/statemanger.gd" id="1_t0hdp"]
+
+[node name="statemanger" type="Node"]
+script = ExtResource("1_t0hdp")

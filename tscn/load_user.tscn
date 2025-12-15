@@ -1,0 +1,92 @@
+[gd_scene load_steps=5 format=3 uid="uid://bxrp24jdpalhl"]
+
+[ext_resource type="Texture2D" uid="uid://bcic64kndcua0" path="res://image/ui_load_user.jpg" id="1_1jvf6"]
+[ext_resource type="Script" uid="uid://dwfcsi3tgvq6d" path="res://code/load_user.gd" id="1_seyhn"]
+[ext_resource type="PackedScene" uid="uid://cs8apk7kdyg5c" path="res://tscn/text.tscn" id="2_08vbe"]
+[ext_resource type="PackedScene" uid="uid://b3hjtwqxf4jh2" path="res://tscn/come_back.tscn" id="4_gxy2i"]
+
+[node name="load_user" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_seyhn")
+warned = ExtResource("2_08vbe")
+come_back = ExtResource("4_gxy2i")
+
+[node name="background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 800.0
+offset_bottom = 600.0
+texture = ExtResource("1_1jvf6")
+expand_mode = 1
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0.8117647)
+layout_mode = 0
+offset_left = 253.0
+offset_top = 148.0
+offset_right = 543.0
+offset_bottom = 378.0
+
+[node name="warning" type="Label" parent="."]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 335.0
+offset_top = 181.0
+offset_right = 447.0
+offset_bottom = 204.0
+text = "请登录你的账号"
+
+[node name="Label" type="Label" parent="."]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 274.0
+offset_top = 272.0
+offset_right = 322.0
+offset_bottom = 295.0
+text = "密码："
+
+[node name="Label2" type="Label" parent="."]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 272.0
+offset_top = 231.0
+offset_right = 320.0
+offset_bottom = 254.0
+text = "账号："
+
+[node name="user_name" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 318.0
+offset_top = 229.0
+offset_right = 501.0
+offset_bottom = 256.0
+
+[node name="user_password" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 317.0
+offset_top = 270.0
+offset_right = 500.0
+offset_bottom = 297.0
+
+[node name="load" type="Button" parent="."]
+layout_mode = 0
+offset_left = 363.0
+offset_top = 309.0
+offset_right = 403.0
+offset_bottom = 340.0
+text = "登录"
+
+[node name="sucess" type="Label" parent="."]
+modulate = Color(0, 1, 0, 1)
+layout_mode = 0
+offset_left = 350.0
+offset_top = 346.0
+offset_right = 430.0
+offset_bottom = 369.0
+text = "登录成功！"
+
+[connection signal="pressed" from="load" to="." method="_on_load_pressed"]

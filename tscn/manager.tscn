@@ -1,0 +1,217 @@
+[gd_scene load_steps=5 format=3 uid="uid://bwnh7j28y76i5"]
+
+[ext_resource type="Texture2D" uid="uid://bnltsa48f5v0g" path="res://image/ui_manager.jpg" id="1_453op"]
+[ext_resource type="Script" uid="uid://0d8sqq7agor7" path="res://code/manager.gd" id="1_srgm2"]
+[ext_resource type="FontFile" uid="uid://cr43j40lok3wo" path="res://font/ZiHunLongTengKaiShu(ShangYongXuShouQuan)-2.ttf" id="2_uscr2"]
+[ext_resource type="PackedScene" uid="uid://b3hjtwqxf4jh2" path="res://tscn/come_back.tscn" id="3_rdwjh"]
+
+[node name="manager" type="Control" node_paths=PackedStringArray("a", "b")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_srgm2")
+a = NodePath("income")
+b = NodePath("pay")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 800.0
+offset_bottom = 600.0
+texture = ExtResource("1_453op")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = -4.0
+offset_right = 126.0
+offset_bottom = 34.0
+theme_override_colors/font_color = Color(0.3616489, 0.37264174, 2.8878452e-07, 1)
+theme_override_fonts/font = ExtResource("2_uscr2")
+theme_override_font_sizes/font_size = 31
+text = "统计查询"
+
+[node name="come_back" parent="." instance=ExtResource("3_rdwjh")]
+layout_mode = 0
+offset_left = 132.0
+offset_top = 4.0
+offset_right = 296.0
+offset_bottom = 30.0
+
+[node name="sum" type="Label" parent="."]
+layout_mode = 0
+offset_left = 487.0
+offset_top = 4.0
+offset_right = 604.0
+offset_bottom = 27.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "您当前的总余额:"
+
+[node name="pop" type="Label" parent="."]
+layout_mode = 0
+offset_left = 610.0
+offset_top = 2.0
+offset_right = 650.0
+offset_bottom = 28.0
+theme_override_colors/font_color = Color(0, 0, 0, 0.8784314)
+theme_override_font_sizes/font_size = 18
+
+[node name="inway" type="ColorRect" parent="."]
+modulate = Color(0.8132577, 0.8132577, 0.81325763, 0.627451)
+layout_mode = 0
+offset_left = 44.0
+offset_top = 51.0
+offset_right = 359.0
+offset_bottom = 585.0
+
+[node name="outway" type="ColorRect" parent="."]
+modulate = Color(0.8132577, 0.81325775, 0.8132574, 0.627451)
+layout_mode = 0
+offset_left = 431.0
+offset_top = 50.0
+offset_right = 746.0
+offset_bottom = 580.0
+
+[node name="income" type="ItemList" parent="."]
+layout_mode = 0
+offset_left = 75.0
+offset_top = 124.0
+offset_right = 326.0
+offset_bottom = 506.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+
+[node name="pay" type="ItemList" parent="."]
+layout_mode = 0
+offset_left = 468.0
+offset_top = 125.0
+offset_right = 719.0
+offset_bottom = 502.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 122.0
+offset_top = 54.0
+offset_right = 246.0
+offset_bottom = 92.0
+theme_override_colors/font_color = Color(0.0666666, 1, 0, 1)
+theme_override_fonts/font = ExtResource("2_uscr2")
+theme_override_font_sizes/font_size = 31
+text = "收入统计"
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 525.0
+offset_top = 58.0
+offset_right = 649.0
+offset_bottom = 96.0
+theme_override_colors/font_color = Color(0.6394739, 0.1256536, 0.123696186, 1)
+theme_override_fonts/font = ExtResource("2_uscr2")
+theme_override_font_sizes/font_size = 31
+text = "支出统计"
+
+[node name="Label4" type="Label" parent="."]
+layout_mode = 0
+offset_left = 94.0
+offset_top = 95.0
+offset_right = 126.0
+offset_bottom = 118.0
+theme_override_colors/font_color = Color(0.1728327, 0.17283267, 0.17283267, 1)
+text = "金额"
+
+[node name="Label5" type="Label" parent="."]
+layout_mode = 0
+offset_left = 483.0
+offset_top = 99.0
+offset_right = 515.0
+offset_bottom = 122.0
+theme_override_colors/font_color = Color(0.1728327, 0.17283267, 0.17283267, 1)
+text = "金额"
+
+[node name="Label6" type="Label" parent="."]
+layout_mode = 0
+offset_left = 262.0
+offset_top = 97.0
+offset_right = 326.0
+offset_bottom = 120.0
+theme_override_colors/font_color = Color(0.1728327, 0.17283267, 0.17283267, 1)
+text = "收入次数"
+
+[node name="Label7" type="Label" parent="."]
+layout_mode = 0
+offset_left = 654.0
+offset_top = 100.0
+offset_right = 718.0
+offset_bottom = 123.0
+theme_override_colors/font_color = Color(0.1728327, 0.17283267, 0.17283267, 1)
+text = "支出次数"
+
+[node name="TextEdit" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 152.0
+offset_top = 510.0
+offset_right = 261.0
+offset_bottom = 542.0
+
+[node name="TextEdit2" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 571.0
+offset_top = 506.0
+offset_right = 680.0
+offset_bottom = 538.0
+
+[node name="Label8" type="Label" parent="."]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 514.0
+offset_right = 149.0
+offset_bottom = 537.0
+theme_override_colors/font_color = Color(0.1728327, 0.17283267, 0.17283267, 1)
+text = "新增收入类型"
+
+[node name="Label9" type="Label" parent="."]
+layout_mode = 0
+offset_left = 469.0
+offset_top = 510.0
+offset_right = 565.0
+offset_bottom = 533.0
+theme_override_colors/font_color = Color(0.1728327, 0.17283267, 0.17283267, 1)
+text = "新增支出类型"
+
+[node name="in" type="Button" parent="."]
+layout_mode = 0
+offset_left = 267.0
+offset_top = 510.0
+offset_right = 307.0
+offset_bottom = 541.0
+text = "新增"
+
+[node name="out" type="Button" parent="."]
+layout_mode = 0
+offset_left = 687.0
+offset_top = 505.0
+offset_right = 727.0
+offset_bottom = 536.0
+text = "新增"
+
+[node name="delect" type="Button" parent="."]
+layout_mode = 0
+offset_left = 133.0
+offset_top = 544.0
+offset_right = 232.0
+offset_bottom = 575.0
+text = "删除"
+
+[node name="delect2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 537.0
+offset_top = 542.0
+offset_right = 636.0
+offset_bottom = 573.0
+text = "删除"
+
+[connection signal="item_selected" from="income" to="." method="_on_income_item_selected"]
+[connection signal="item_selected" from="pay" to="." method="_on_pay_item_selected"]
