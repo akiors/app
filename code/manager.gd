@@ -7,19 +7,19 @@ var id1:int
 var id2:int
 
 func _ready() -> void:
-	$in.connect("pressed",additems.bind(false))
+	$in.connect("pressed",additems.bind(false))     #连接信号并由bind传入值
 	$out.connect("pressed",additems.bind(true))
 	$delect.connect("pressed",delectitems.bind(false))
 	$delect2.connect("pressed",delectitems.bind(true))
 	var datap=load("user://user_data.res")
 	if datap==null||!datap.dict.has(Statemanger.user_name): return 
-	var text=str(datap.newmoney[Statemanger.user_name])+"元"
+	var text=str(datap.newmoney[Statemanger.user_name])+"元"   #总金额显示
 	$pop.text=text
 	var arr=datap.inway[Statemanger.user_name]
 	for i in arr:
-		var y=13-i.length()-str(arr[i][0]).length()
+		var y=13-i.length()-str(arr[i][0]).length()        #间隔控制(暂时有问题)
 		if arr[i][0]==0:
-			a.add_item(i+":"+str(arr[i][0])+"元"+"   ".repeat(y)+" "+str(arr[i][1])+"次")
+			a.add_item(i+":"+str(arr[i][0])+"元"+"   ".repeat(y)+" "+str(arr[i][1])+"次")   #金额次数显示
 		else:
 			a.add_item(i+":+"+str(arr[i][0])+"元"+"   ".repeat(y)+" "+str(arr[i][1])+"次")
 	var arr1=datap.outway[Statemanger.user_name]
@@ -31,7 +31,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 	
-func additems(cmp:bool):
+func additems(cmp:bool):      新增类型
 	var datap=load("user://user_data.res")
 	if datap==null||!datap.dict.has(Statemanger.user_name): return 
 	var map={false:datap.inway[Statemanger.user_name],true:datap.outway[Statemanger.user_name]}
@@ -50,7 +50,7 @@ func additems(cmp:bool):
 	ResourceSaver.save(datap,"user://user_data.res")
 	pass 
 	
-func delectitems(cmp:bool):
+func delectitems(cmp:bool):    删除类型
 	var datap=load("user://user_data.res")
 	if datap==null||!datap.dict.has(Statemanger.user_name): return 
 	var map={false:datap.inway[Statemanger.user_name],true:datap.outway[Statemanger.user_name]}
@@ -71,7 +71,7 @@ func delectitems(cmp:bool):
 	id2=-1
 	pass
 
-func _on_income_item_selected(index: int) -> void:
+func _on_income_item_selected(index: int) -> void:   #当前的收入选择
 	choose1=$income.get_item_text(index)
 	var count=0
 	for i in choose1:
@@ -82,7 +82,7 @@ func _on_income_item_selected(index: int) -> void:
 	id1=index
 	pass 
 
-func _on_pay_item_selected(index: int) -> void:
+func _on_pay_item_selected(index: int) -> void:     #支出的收入选择
 	choose2=$pay.get_item_text(index)
 	var count=0
 	for i in choose2:
