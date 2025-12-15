@@ -16,7 +16,7 @@ func creat_warned(ui:PackedScene,names:String):
 	tui.text=names
 	get_tree().get_root().add_child(tui)
 
-func _process(delta: float) -> void:
+func _process(delta: float) -> void:    ui更新
 	if Statemanger.isload:
 		$unload.visible=false
 		$user_name/data.text=Statemanger.user_name
@@ -39,7 +39,7 @@ func _on_load_user_pressed() -> void:
 	get_tree().change_scene_to_packed(load_user)
 	pass 
 
-func _on_but_4_pressed() -> void:
+func _on_but_4_pressed() -> void:     #注销用户
 	var sp=Statemanger.user_name
 	if sp=="":
 		creat_warned(menu_text,"你当前未登入，注销失败")
@@ -67,7 +67,7 @@ func _on_but_3_pressed() -> void:
 	get_tree().change_scene_to_packed(manager)
 	pass 
 
-func _on_quit_pressed() -> void:
+func _on_quit_pressed() -> void:     #退出程序(场景树)
 	get_tree().quit()
 	pass 
 
@@ -75,7 +75,7 @@ func _on_but_2_pressed() -> void:
 	get_tree().change_scene_to_packed(budget)
 	pass 
 
-func _on_button_pressed() -> void:
+func _on_button_pressed() -> void:     #如果为管理员会可以修改密码
 	if $change_password.text=="":
 		creat_warned(menu_text,"修改失败")
 		return
