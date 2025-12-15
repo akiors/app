@@ -23,11 +23,12 @@
 ## 运行步骤
 1. 下载并安装[Godot 4.x引擎](https://godotengine.org/download)
 2. 克隆本仓库到本地：
-   ```bash   ”“bash   ”“bash”“bash   ”“bash”“bash
+   ```bash   ”“bash   ”“bash”“bash   ”“bash”“bash“bash”“bash”“bash”“bash”“bash”“bash”“bash
    git clone https://github.com/你的用户名/仓库名.git
+3. 在release有项目编译后的exe文件,其中pck文件是资源文件
 
 ## 详细说明
-```text
+```text   ' ' '文本
 godot-account-book/
 ├─ code/          # GDScript脚本目录（核心逻辑代码）
 │  |─ add_money.gd   # 记账管理界面功能脚本
@@ -54,22 +55,22 @@ godot-account-book/
 
 2. **函数定义**
    - 用`func`定义函数，如收支录入功能：
-     ```gdscript
-     func add_income(amount: int, desc: String):
-         money += amount
-         record_list.append({"type": "收入", "amount": amount, "desc": desc})
+     ```gdscript   “”“gdscript
+     func add_income(amount: int, desc: String):函数add_income(amount: int, desc: String)：
+         money += amount   钱=金额
+         record_list.append({"type": "收入", "amount": amount, "desc": desc})record_list。追加({“类型”:“收入”,“数量”:,“desc”:desc})
      ```
 2. **条件判断**
    - 用`if-else-elif`判断：
-     ```gdscript   “”“gdscript
+     ```gdscript   “”“gdscript' ' ' gdscript”“gdscript
      var a=2
      var b=3
      if b>a:
         print("true"   “真正的”)
      elif b==a:
-        print("same")
-     else:
-        print("false")
+        print("same")   打印(“相同”)
+     else:   其他:
+        print("false")   打印(“错误”)
      ```
 
 3. **节点操作**
@@ -78,10 +79,10 @@ godot-account-book/
 
 4. **数据处理**
    - 用`for`循环遍历收支记录数组，实现数据统计：
-     ```gdscript
+     ```gdscript   “”“gdscript
      func calculate_total():
          var total = 0
-         for record in record_list:
+         for record in record_list:对于record_list中的记录：
              total += record["amount"]
          return total
      ```
