@@ -11,17 +11,23 @@
 1. 手动录入收入/支出记录（支持填写金额、收支类型、备注信息）
 2. 实时统计总收支、月度收支数据
 3. 收支记录的查看、删除操作
+4. 用户的注册登录注销功能
+5. 预算的管理
+6. 对各类型的收入支出进行统计
 
 ### 开发环境
-- 引擎版本：Godot 4.2.1（可替换为你的实际版本）
+- 引擎版本：Godot 4.5.1
 - 开发语言：GDScript
-- 运行平台：Windows（若支持其他平台可补充）
+- 运行平台：Windows
 
 ## 运行步骤
 1. 下载并安装[Godot 4.x引擎](https://godotengine.org/download)
 2. 克隆本仓库到本地：
-   ```bash   ”“bash
+   ```bash   ”“bash   ”“bash”“bash   ”“bash”“bash
    git clone https://github.com/你的用户名/仓库名.git
+
+## 详细说明
+```text
 godot-account-book/
 ├─ code/          # GDScript脚本目录（核心逻辑代码）
 │  |─ add_money.gd   # 记账管理界面功能脚本
@@ -33,9 +39,49 @@ godot-account-book/
 |  |─ manager.gd     # 统计查询界面功能脚本
 |  |─ meue.gd        # 主界面功能脚本
 |  |─ statemanger.gd # 全局数据管理脚本
-|  |─ text.gd        # 文字功能脚本
+|  L─ text.gd        # 文字功能脚本
 ├─ font/          # 项目字体资源
 ├─ image/         # 界面图片素材
 ├─ tscn/          # Godot场景文件（UI布局）
 ├─ README.md      # 项目说明文档
 └─ project.godot  # Godot项目核心配置文件
+```
+## GDScript语法要点
+本项目主要用到GDScript的基础语法，与python类似，末尾无需分号,核心知识点如下：
+1. **变量与数据类型**
+   - 用`var`定义变量，支持动态类型（如`var money = 0`表示收支金额，`var note = ""`表示备注信息）。
+   - 常用类型：`int`（整数）、`String`（字符串）、`Array`（数组，存储收支记录）。
+
+2. **函数定义**
+   - 用`func`定义函数，如收支录入功能：
+     ```gdscript
+     func add_income(amount: int, desc: String):
+         money += amount
+         record_list.append({"type": "收入", "amount": amount, "desc": desc})
+     ```
+2. **条件判断**
+   - 用`if-else-elif`判断：
+     ```gdscript   “”“gdscript
+     var a=2
+     var b=3
+     if b>a:
+        print("true"   “真正的”)
+     elif b==a:
+        print("same")
+     else:
+        print("false")
+     ```
+
+3. **节点操作**
+   - 通过`$节点名`获取UI节点，如获取输入框内容：`var input_amount = $LineEdit_amount.text.to_int()`。
+   - 绑定按钮点击事件：`$Button_add.pressed.connect(add_income)`。
+
+4. **数据处理**
+   - 用`for`循环遍历收支记录数组，实现数据统计：
+     ```gdscript
+     func calculate_total():
+         var total = 0
+         for record in record_list:
+             total += record["amount"]
+         return total
+     ```
